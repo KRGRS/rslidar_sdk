@@ -78,7 +78,7 @@ inline sensor_msgs::PointCloud2 toRosMsg(const LidarPointCloudMsg& rs_msg, const
   offset = addPointField(ros_msg, "intensity", 1, sensor_msgs::PointField::FLOAT32, offset);
 #if defined(POINT_TYPE_XYZIRT) || defined(POINT_TYPE_XYZIRTF)
   offset = addPointField(ros_msg, "ring", 1, sensor_msgs::PointField::UINT16, offset);
-  offset = addPointField(ros_msg, "timestamp", 1, sensor_msgs::PointField::FLOAT64, offset);
+  offset = addPointField(ros_msg, "time", 1, sensor_msgs::PointField::FLOAT64, offset);
 #endif
 
 #if defined(POINT_TYPE_XYZIF) || defined(POINT_TYPE_XYZIRTF) 
@@ -101,7 +101,7 @@ inline sensor_msgs::PointCloud2 toRosMsg(const LidarPointCloudMsg& rs_msg, const
 
 #if defined(POINT_TYPE_XYZIRT) || defined(POINT_TYPE_XYZIRTF)
   sensor_msgs::PointCloud2Iterator<uint16_t> iter_ring_(ros_msg, "ring");
-  sensor_msgs::PointCloud2Iterator<double> iter_timestamp_(ros_msg, "timestamp");
+  sensor_msgs::PointCloud2Iterator<double> iter_timestamp_(ros_msg, "time");
 #endif
 
 #if defined(POINT_TYPE_XYZIF) || defined(POINT_TYPE_XYZIRTF) 
@@ -308,7 +308,7 @@ inline sensor_msgs::msg::PointCloud2 toRosMsg(const LidarPointCloudMsg& rs_msg, 
 
 #if defined(POINT_TYPE_XYZIRT) || defined(POINT_TYPE_XYZIRTF)
   offset = addPointField(ros_msg, "ring", 1, sensor_msgs::msg::PointField::UINT16, offset);
-  offset = addPointField(ros_msg, "timestamp", 1, sensor_msgs::msg::PointField::FLOAT64, offset);
+  offset = addPointField(ros_msg, "time", 1, sensor_msgs::msg::PointField::FLOAT64, offset);
 #endif
 
 #if defined(POINT_TYPE_XYZIF) || defined(POINT_TYPE_XYZIRTF) 
@@ -330,7 +330,7 @@ inline sensor_msgs::msg::PointCloud2 toRosMsg(const LidarPointCloudMsg& rs_msg, 
   sensor_msgs::PointCloud2Iterator<float> iter_intensity_(ros_msg, "intensity");
 #if defined(POINT_TYPE_XYZIRT) || defined(POINT_TYPE_XYZIRTF)
   sensor_msgs::PointCloud2Iterator<uint16_t> iter_ring_(ros_msg, "ring");
-  sensor_msgs::PointCloud2Iterator<double> iter_timestamp_(ros_msg, "timestamp");
+  sensor_msgs::PointCloud2Iterator<double> iter_timestamp_(ros_msg, "time");
 #endif
 
 #if defined(POINT_TYPE_XYZIF) || defined(POINT_TYPE_XYZIRTF) 
